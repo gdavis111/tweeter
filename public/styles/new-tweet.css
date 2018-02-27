@@ -1,0 +1,35 @@
+span.counter {
+  float: right;
+  padding-right: 4%;
+}
+
+section.new-tweet {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #bfbfbf;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+  position: relative;
+  top: 55px;
+}
+
+textarea {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  padding-left: 1%;
+  resize: vertical;
+}
+
+input {
+  margin-left: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.new-tweet h2 {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-bottom: 1.4px solid black;
+}
