@@ -1,6 +1,11 @@
 span.counter {
   float: right;
   padding-right: 4%;
+  color: black;
+}
+
+.counter.overMax {
+  color: red;
 }
 
 section.new-tweet {
@@ -15,7 +20,7 @@ section.new-tweet {
   top: 55px;
 }
 
-textarea {
+.new-tweet textarea {
   width: 95%;
   margin-left: 2.5%;
   margin-right: 2.5%;
