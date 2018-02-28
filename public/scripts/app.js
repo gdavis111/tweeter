@@ -41,16 +41,23 @@ $(document).ready(function() {
 
   $('#new-tweet').on('submit', function(ev) {
     ev.preventDefault()
-    let formData = $('#new-tweet').serialize()
-    $.ajax({
-      url: "/tweets", // Figure out what this means / if its right
-      method: "POST",
-      data: formData,
-      success: function(result) {
-        $('.new-tweet form textarea').val('');
-        loadTweets();
-      }
-    });
+    let tweetLength = $('#new-tweet textarea').val().length;
+    if (tweetLength > 140) {  // checks to make sure tweet is not over max length
+      alert('You must keep your tweet below 140 characters!')
+    } else if (tweetLength <= 0) {  // checks to make sure tweet is not empty
+      alert('You must enter something to tweet about!')
+    } else {  // allows
+      let formData = $('#new-tweet').serialize();
+      $.ajax({
+        url: "/tweets", // Figure out what this means / if its right
+        method: "POST",
+        data: formData,
+        success: function(result) {
+          $('.new-tweet form textarea').val('');
+          loadTweets();
+        }
+      });
+    }
   });
 
   function loadTweets() {
