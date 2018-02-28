@@ -86,4 +86,17 @@ function renderTweets(tweets) { // uses createTweetElement to turn each object i
 
 $(document).ready(function() {
    renderTweets(data);
+
+   $('#new-tweet').on('submit', function(ev) {
+    ev.preventDefault()
+    let formData = $('#new-tweet').serialize()
+    $.ajax({
+      url: "/tweets", // Figure out what this means / if its right
+      method: "POST",
+      data: formData,
+      success: function(result) {
+        $('.new-tweet form textarea').val('');
+      }
+    });
+  });
 });

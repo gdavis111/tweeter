@@ -10,5 +10,4 @@ $(document).ready(function() {
       count.removeClass('overMax');
     }
   });
-  console.log("Page has loaded I think!")
 });
