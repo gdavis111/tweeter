@@ -45,14 +45,10 @@ function renderTweets(tweets) { // uses createTweetElement to turn each object i
 
 $(document).ready(function() {
 
-// $( ".compose" ).click(function() {
-//   if ($('.new-tweet').hasClass('toggledUp')) {
-//     $('.new-tweet').slideToggle().removeClass('toggledUp')
-//     $('.new-tweet textarea').select();
-//   } else {
-//       $('.new-tweet').slideToggle().addClass('toggledUp');
-//   };
-// });
+  $( ".compose" ).click(function() {
+      $('.new-tweet').slideToggle()
+      $('.new-tweet textarea').select();
+  });
 
   $('#new-tweet').on('submit', function(ev) {
     ev.preventDefault()
