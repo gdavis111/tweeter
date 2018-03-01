@@ -23,3 +23,23 @@
   line-height: 80px;
   font-size: 2em;
 }
+
+button.compose {
+  display: inline-flex;
+  float: right;
+  margin-top: 13px;
+  margin-right: 100px;
+  width: 100px;
+  height: 55px;
+  border: solid black 1px;
+  border-radius: 5px;
+  background-color: #DBFEFE;
+  color: #00a087;
+  font-size: 1.25em;
+  text-indent: 4px;
+}
+
+button.compose:hover {
+  background-color: white;
+  color: black;
+}

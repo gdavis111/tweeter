@@ -4,20 +4,25 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
+
 function createTweetElement(tweet) {
-  //let $tweet = $('<article>').addClass('tweet');
   let $tweet = `<article class="tweet">
                     <header>
-                    <img class="avatar-pic" src="${tweet.user.avatars.small}">
-                    <h2>${tweet.user.name}</h2>
-                    <p class="tag">${tweet.user.handle}</p>
+                    <img class="avatar-pic" src="${escape(tweet.user.avatars.small)}">
+                    <h2>${escape(tweet.user.name)}</h2>
+                    <p class="tag">${escape(tweet.user.handle)}</p>
                   </header>
                   <div class="tweet-text">
-                    <p>${tweet.content.text}</p>
+                    <p>${escape(tweet.content.text)}</p>
                   </div>
                   <footer class="footer">
                     <div class="date">
-                      <p class="timeStamp">${tweet.created_at}</p>
+                      <p class="timeStamp">${escape(tweet.created_at)}</p>
                     </div>
                     <div>
                       <img class="bottomLinks" src="/images/tweetLike.png">
@@ -34,10 +39,20 @@ function renderTweets(tweets) { // uses createTweetElement to turn each object i
   tweets.forEach(function(tweet) { //
     const createdTweet = createTweetElement(tweet);
     $('.printed-tweet').prepend(createdTweet);
+    console.log(createdTweet);
   });
 }
 
 $(document).ready(function() {
+
+// $( ".compose" ).click(function() {
+//   if ($('.new-tweet').hasClass('toggledUp')) {
+//     $('.new-tweet').slideToggle().removeClass('toggledUp')
+//     $('.new-tweet textarea').select();
+//   } else {
+//       $('.new-tweet').slideToggle().addClass('toggledUp');
+//   };
+// });
 
   $('#new-tweet').on('submit', function(ev) {
     ev.preventDefault()
