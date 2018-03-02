@@ -14,7 +14,8 @@ Once opened, users can type in the text area whatever they want to tweet about (
 
 ## Final Product
 
-!["Screenshot of URLs page"]
+!["Screenshot of tweets/fan feedback"](https://github.com/gdavis111/tweeter/blob/master/docs/fan-feedback.png?raw=true)
+!["Screenshot of home page and tweets"](https://github.com/gdavis111/tweeter/blob/master/docs/home-page.png?raw=true)
 
 ## Dependencies
 
